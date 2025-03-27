@@ -1,0 +1,46 @@
+name: Deploy Flask to EC2
+
+on:
+  push:
+    branches:
+      - main  # Change this if using another branch
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Get Latest Code
+        uses: actions/checkout@v3
+
+      - name: Deploy to EC2
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.EC2_HOST }}
+          username: ${{ secrets.EC2_USER }}
+          key: ${{ secrets.EC2_SSH_KEY }}
+          script: |
+            echo "🔹 Connecting to EC2 Instance..."
+            cd /home/ubuntu/restaurant-menu/
+            
+            if [ ! -d ".git" ]; then
+              echo "❌ Error: Not inside a Git repository!"
+              exit 1
+            fi
+
+            echo "🔄 Pulling latest code from GitHub..."
+            git pull origin main
+
+            echo "🐍 Activating virtual environment..."
+            source venv/bin/activate  
+
+            echo "📦 Installing dependencies..."
+            pip install -r requirements.txt 
+
+            echo "📊 Running database migrations (if any)..."
+            flask db upgrade || echo "⚠️ No migrations found, skipping."
+
+            echo "🔄 Restarting Gunicorn service..."
+            sudo systemctl restart flask  # Restart Flask service
+
+            echo "✅ Deployment Complete!"

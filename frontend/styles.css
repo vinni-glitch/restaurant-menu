@@ -1,0 +1,258 @@
+/* General Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+h1, h2, h3 {
+    color: #333;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+button {
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    opacity: 0.9;
+}
+
+/* Header Styles */
+header {
+    background-color: #ff6f61;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.5rem;
+}
+
+header p {
+    margin: 10px 0 0;
+    font-size: 1.2rem;
+}
+
+/* Main Container Styles */
+.home-container, .menu-container, .dashboard-container, .login-container {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Recommendations Section */
+.recommendations {
+    margin-bottom: 30px;
+}
+
+.recommendations h2 {
+    font-size: 2rem;
+    color: #ff6f61;
+}
+
+.recommendations ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.recommendations ul li {
+    background-color: #fff3f2;
+    margin: 10px 0;
+    padding: 15px;
+    border-radius: 5px;
+    transition: transform 0.3s ease;
+}
+
+.recommendations ul li:hover {
+    transform: translateY(-5px);
+}
+
+/* Action Buttons */
+.action-buttons {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #ff6f61;
+    color: white;
+    border-radius: 5px;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #e65a50;
+}
+
+/* Login Form Styles */
+.login-container {
+    max-width: 400px;
+    margin: 50px auto;
+    padding: 30px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.login-container h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #ff6f61;
+}
+
+.login-container input {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+.login-container button {
+    width: 100%;
+    padding: 10px;
+    background-color: #ff6f61;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+.login-container button:hover {
+    background-color: #e65a50;
+}
+
+.error-message {
+    color: red;
+    text-align: center;
+    margin-top: 10px;
+}
+
+/* Menu Styles */
+.menu-container h1, .dashboard-container h1 {
+    text-align: center;
+    color: #ff6f61;
+}
+
+.menu-container ul, .dashboard-container ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.menu-container ul li, .dashboard-container ul li {
+    background-color: #fff3f2;
+    margin: 10px 0;
+    padding: 15px;
+    border-radius: 5px;
+    transition: transform 0.3s ease;
+}
+
+.menu-container ul li:hover, .dashboard-container ul li:hover {
+    transform: translateY(-5px);
+}
+
+/* Admin Dashboard Styles */
+.dashboard-container h2 {
+    color: #ff6f61;
+}
+
+#addItemForm {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+#addItemForm input {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+#addItemForm button {
+    padding: 10px;
+    background-color: #ff6f61;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+#addItemForm button:hover {
+    background-color: #e65a50;
+}
+
+/* Logout Button */
+button[onclick="logout()"] {
+    display: block;
+    margin: 20px auto;
+    padding: 10px 20px;
+    background-color: #ff6f61;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+button[onclick="logout()"]:hover {
+    background-color: #e65a50;
+}
+
+/* Footer Styles */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #333;
+    color: white;
+    margin-top: 20px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 2rem;
+    }
+
+    header p {
+        font-size: 1rem;
+    }
+
+    .home-container, .menu-container, .dashboard-container, .login-container {
+        padding: 15px;
+    }
+
+    .btn {
+        padding: 8px 16px;
+        font-size: 0.9rem;
+    }
+
+    .login-container {
+        padding: 20px;
+    }
+
+    .login-container input, .login-container button {
+        font-size: 0.9rem;
+    }
+
+    .menu-container ul li, .dashboard-container ul li {
+        padding: 10px;
+    }
+}
