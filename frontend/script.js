@@ -1,4 +1,4 @@
-const API_BASE_URL = "http://34.232.218.47";
+const API_BASE_URL = "http://3.80.217.175";
 
 document.addEventListener("DOMContentLoaded", function () {
     if (document.getElementById("loginForm")) {
