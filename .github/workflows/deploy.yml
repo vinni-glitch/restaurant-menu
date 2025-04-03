@@ -19,10 +19,11 @@ jobs:
           host: ${{ secrets.EC2_HOST }}
           username: ${{ secrets.EC2_USER }}
           key: ${{ secrets.EC2_SSH_KEY }}
+          port: 22
           script: |
             echo "🔹 Connecting to EC2 Instance..."
             cd /home/ubuntu/restaurant-menu/
-            
+
             if [ ! -d ".git" ]; then
               echo "❌ Error: Not inside a Git repository!"
               exit 1
